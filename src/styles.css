@@ -2,10 +2,11 @@
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 600;
 
-  color: #0f0f0f;
+  color: #241c1c;
   background-color: #f6f6f6;
+  border-color: #6f6f6f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,6 +22,42 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+.login-box {
+  border-radius: 0px;
+  background-color: #ffffff00;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  box-shadow: 0px 1px 0px 0px #6f6f6f;
+}
+
+#passbox {
+  margin-bottom: 25px;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #ffffff00;
+  border-width: 1px;
+  border-color: #6f6f6f;
+  box-shadow: none;
+  font-weight: 600;
+}
+
+.login-button {
+  margin-left: 120px;
+  margin-right: 120px;
+}
+
+.login-logo {
+  max-width: 70px;
+  margin-bottom: 30px;
+  margin-left: 5px;
 }
 
 .logo {

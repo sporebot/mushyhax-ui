@@ -3,9 +3,18 @@
 </script>
 
 <main class="container">
-  <h1>Welcome to Tauri!</h1>
+  <div style="display: flex; margin-left: auto; margin-right: auto; min-width: 210px">
+    <h1 style="margin-bottom: 50px;">Login to</h1>
+    <img src="/mshx.svg" class="login-logo"/>
+  </div>
 
-  <div class="row">
+  <input placeholder="Username" class="login-box" id="userbox">
+  <input placeholder="Password" type="password" class="login-box" id="passbox">
+
+  <p style="margin: 5px; font-weight: 600;">insert random fact here</p>
+  <button id="login-button" class="login-button button">Login</button>
+
+  <!-- <div class="row">
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo vite" alt="Vite Logo" />
     </a>
@@ -23,7 +32,7 @@
 
   <div class="row">
     <Greet />
-  </div>
+  </div> -->
 
 </main>
 
