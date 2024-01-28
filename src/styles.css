@@ -15,6 +15,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
+html, body {
+  min-height: 100% !important;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 .container {
   margin: 0;
   padding-top: 10vh;
@@ -23,6 +30,127 @@
   justify-content: center;
   text-align: center;
 }
+
+.executor-container {
+  text-align: left;
+  display: flex;
+  height: 100%;
+}
+
+.output {
+  margin-top: auto;
+  width: 100%;
+  height: 200px;
+  box-shadow: inset 0px 0px 0px 1px #0000002f;
+  background-color: #0000002f;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.output-header {
+  width: calc(100% + 20px);
+  background-color: #0000002f;
+  margin: -10px;
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  display: flex;
+  color: #6f6f6f
+}
+
+.editor {
+  width: calc(100% - 60px);
+  height: calc(100% - 200px - 20px);
+  left: 60px;
+  position: absolute;
+  background-color: #24c8db;
+}
+
+.output-icon {
+  margin: -20px;
+  margin-bottom: 1.5px;
+  filter: invert(48%) sepia(0%) saturate(1148%) hue-rotate(156deg) brightness(88%) contrast(81%);
+}
+
+.output-button {
+  height: 10px;
+  margin-left: auto;
+  margin-right: 15px;
+  background-color: #00000000;
+}
+
+.output-button:hover {
+  background-color: #0000002f;
+  border: none;
+}
+
+.output-button:active {
+  background-color: #000000ff;
+}
+
+
+.output-text {
+  font-family: "Jetbrains Mono", monospace;
+}
+
+.warning {
+  color: #c97f34;
+  font-weight: 900;
+}
+
+.error {
+  color: #c93434;
+  font-weight: 900;
+}
+
+.success {
+  color: #6dbf54;
+  font-weight: 900;
+}
+
+.sidebar {
+  width: 60px;
+  height: 100%;
+  background-color: #0000002f;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.sidebar-icon {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin: 0px;
+  display: block;
+  filter: invert(48%) sepia(0%) saturate(1148%) hue-rotate(156deg) brightness(88%) contrast(81%);
+}
+
+.sidebar-button {
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  margin: 10px;
+  top: -5px;
+  margin-bottom: 0px;
+  display: block;
+  background-color: #00000021;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+#run:hover {
+  border-width: 0px;
+  filter: invert(24%) sepia(12%) saturate(600%) hue-rotate(67deg) brightness(92%) contrast(89%);
+}
+
 
 .login-box {
   border-radius: 0px;
@@ -86,9 +214,9 @@ a:hover {
   color: #535bf2;
 }
 
-h1 {
+/* h1 {
   text-align: center;
-}
+} */
 
 input,
 button {

@@ -1,9 +1,10 @@
 {
   "build": {
-    "beforeDevCommand": "npm run dev",
-    "beforeBuildCommand": "npm run build",
-    "devPath": "http://localhost:1420",
-    "distDir": "../dist"
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devPath": "../src",
+    "distDir": "../src",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "mushyhax-ui",
@@ -15,12 +16,17 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": ["http://0.0.0.0:58280/*"]
       }
     },
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.mshx.dev",
+      "identifier": "com.tauri.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -35,10 +41,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "resizable": false,
-        "title": "mushyhax",
+        "resizable": true,
+        "title": "MSHX - Login",
         "width": 400,
-        "height": 425
+        "height": 450
       }
     ]
   }

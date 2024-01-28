@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/main.js" defer></script>
+    <style>
+      .logo.vanilla:hover {
+        filter: drop-shadow(0 0 2em #ffe21c);
+      }
+    </style>
+    <script type="module" defer>
+        const { invoke } = window.__TAURI__.tauri;
+
+        await invoke("executor_resize")
+    </script>
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="_static/js/ext/monaco-editor/min/vs/editor/editor.main.css">
+  </head>
+
+  <body>
+    <script>var require = { paths: { 'vs': '_static/js/ext/monaco-editor/min/vs' } };</script>
+    <script src="_static/js/ext/monaco-editor/min/vs/loader.js"></script>
+    <script src="_static/js/ext/monaco-editor/min/vs/editor/editor.main.nls.js"></script>
+    <script src="_static/js/ext/monaco-editor/min/vs/editor/editor.main.js"></script>
+
+
+    <div class="executor-container">
+      <div class="sidebar">
+        <button class="sidebar-button" id="run">
+            <img id="run" src="/assets/play.svg" class="sidebar-icon"/>
+        </button>
+        <button class="sidebar-button sidebar-bottom" id="settings">
+            <img id="settings-icon" src="/assets/settings.svg" class="sidebar-icon"/>
+        </button>
+      </div>
+      <div class="output" id="output-container">
+            <div class="output-header">
+                Output
+                <button class="output-button" id="clear-output">
+                    <img id="clear-icon" src="/assets/eraser.svg" class="output-icon"/>
+                </button>
+            </div>
+            <span class="output-text" id="base-output-text">2021-05-26 06:46:33 - hello world</span>
+        </div>
+      <div class="editor" id="editor-container">
+            <script>
+                // CREATE AN EDITOR
+                const {fetch, Body} = window.__TAURI__.http
+                
+                var h_div = document.getElementById('editor-container');
+
+                const baseOutputText = document.getElementById("base-output-text")
+                const outputContainer = document.getElementById("output-container")
+                const clearOutputButton = document.getElementById("clear-output")
+                const runButton = document.getElementById("run")
+
+                baseOutputText.remove()
+
+                function print(text, type) {
+                    const newText = baseOutputText.cloneNode()
+
+                    newText.innerHTML = text
+                    if(type){
+                        newText.classList.add(type)
+                    }
+
+                    outputContainer.appendChild(newText)
+                }
+
+                monaco.editor.defineTheme("mshxTheme", {
+                    base: "vs-dark",
+                    inherit: true,
+                    rules: [],
+                    colors: {
+                        "editor.background": "#1c1c1c"
+                    },
+                    fontFamily: "Hack"
+                })
+
+                var editor = monaco.editor.create(h_div, {
+                    value: "print('truly,')",
+                    language: 'lua',
+                    theme: "mshxTheme",
+                    fontFamily: "Jetbrains Mono",
+                    fontLigatures: true,
+                    fontSize: 16
+                });
+
+                window.onresize = function (){
+                    editor.layout();
+                };
+
+                print("mushyhax on top!!", "success")
+                
+                clearOutputButton.onclick = () => {
+                    while (document.getElementById("base-output-text")) {
+                        outputContainer.removeChild(document.getElementById("base-output-text"));
+                    }
+                }
+
+                runButton.onclick = () => {
+                    fetch("http://0:58280/add-to-queue", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: Body.json({
+                            src: editor.getValue()
+                        })
+                    })
+                }
+
+                const recursive = () => {
+                    setTimeout(async () => {
+                        try{
+                            const data = await fetch("http://0:58280/read-message-queue")
+
+                            data.data.forEach(item => {
+                                print(item[0], item[1])
+                            })
+
+                            recursive()
+                        }catch(e){
+                            print("failed to check for new output messages (is mushyhax running?)", "error")
+                            setTimeout(recursive, 5000)
+                        }
+                    }, 100)
+                }
+
+                recursive()
+            </script>
+      </div>
+    </div>
+  </body>
+</html>
