@@ -1,0 +1,200 @@
+[
+    {
+        "function": "assert",
+        "arguments": "value: Variant, errorMessage: string",
+        "returns": ""
+    },
+    {
+        "function": "collectgarbage",
+        "arguments": "operation: string",
+        "returns": ""
+    },
+    {
+        "function": "error",
+        "arguments": "message: string, level: number",
+        "returns": "void"
+    },
+    {
+        "function": "getfenv",
+        "arguments": "stack: number/func",
+        "returns": "table"
+    },
+    {
+        "function": "getmetatable",
+        "arguments": "t: Variant",
+        "returns": "table/string"
+    },
+    {
+        "function": "ipairs",
+        "arguments": "t: Array",
+        "returns": "func"
+    },
+    {
+        "function": "loadstring",
+        "arguments": "contents: string",
+        "returns": "function/string"
+    },
+    {
+        "function": "next",
+        "arguments": "t: table, lastKey: Variant",
+        "returns": "Variant"
+    },
+    {
+        "function": "pairs",
+        "arguments": "t: table",
+        "returns": "func"
+    },
+    {
+        "function": "pcall",
+        "arguments": "func: func, args: Tuple",
+        "returns": "boolean, string/Tuple"
+    },
+    {
+        "function": "print",
+        "arguments": "params: Tuple",
+        "returns": "void"
+    },
+    {
+        "function": "rawequal",
+        "arguments": "v1: Variant, v2: Variant",
+        "returns": "boolean"
+    },
+    {
+        "function": "rawget",
+        "arguments": "t: table, index: Variant",
+        "returns": "Variant"
+    },
+    {
+        "function": "rawlen",
+        "arguments": "t: table",
+        "returns": "number"
+    },
+    {
+        "function": "rawset",
+        "arguments": "t: table, index: Variant, value: Variant",
+        "returns": "table"
+    },
+    {
+        "function": "select",
+        "arguments": "index: number, args: Tuple",
+        "returns": "Tuple"
+    },
+    {
+        "function": "setfenv",
+        "arguments": "f: number/func, fenv: table",
+        "returns": "func"
+    },
+    {
+        "function": "setmetatable",
+        "arguments": "t: table, newMeta: Variant",
+        "returns": "table"
+    },
+    {
+        "function": "tonumber",
+        "arguments": "arg: Variant, base: void/number",
+        "returns": "number/void"
+    },
+    {
+        "function": "tostring",
+        "arguments": "e: Variant",
+        "returns": "string"
+    },
+    {
+        "function": "type",
+        "arguments": "v: Variant",
+        "returns": "string"
+    },
+    {
+        "function": "unpack",
+        "arguments": "list: table, i: number, j: number",
+        "returns": "Tuple/void"
+    },
+    {
+        "function": "xpcall",
+        "arguments": "f: func, err: func, args: Tuple",
+        "returns": "boolean"
+    },
+    {
+        "function": "elapsedTIme",
+        "arguments": "",
+        "returns": "number"
+    },
+    {
+        "function": "gcinfo",
+        "arguments": "",
+        "returns": "number"
+    },
+    {
+        "function": "require",
+        "arguments": "module: ModuleScript",
+        "returns": "Variant"
+    },
+    {
+        "function": "settings",
+        "arguments": "",
+        "returns": "GlobalSettings"
+    },
+    {
+        "function": "tick",
+        "arguments": "",
+        "returns": "number"
+    },
+    {
+        "function": "time",
+        "arguments": "",
+        "returns": "number"
+    },
+    {
+        "function": "typeof",
+        "arguments": "object: Variant",
+        "returns": "string"
+    },
+    {
+        "function": "UserSettings",
+        "arguments": "",
+        "returns": "UserSettings"
+    },
+    {
+        "function": "version",
+        "arguments": "",
+        "returns": "string"
+    },
+    {
+        "function": "warn",
+        "arguments": "params: Tuple",
+        "returns": "void"
+    },
+    {"keyword": "local "},
+    {"keyword": "then"},
+    {"keyword": "until"},
+    {"keyword": "continue"},
+    {"keyword": "true"},
+    {"keyword": "false"},
+    {"keyword": "nil"},
+    {"keyword": "in"},
+    {"keyword": "end"},
+    {
+        "method": "function",
+        "append": "($1)\n\t$2\nend"
+    },
+    {
+        "method": "if",
+        "append": "($1)then\n\t$2\nend"
+    },
+    {
+        "method": "while",
+        "append": "($1)do\n\t$2\nend"
+    },
+    {
+        "method": "repeat",
+        "append": "\n\t$1\nuntil $2"
+    },
+    {
+        "method": "do",
+        "append": "\n\t$2\nend"
+    },
+    {
+        "method": "for",
+        "append": " $1 in $2 do\n\t$3\nend"
+    }
+]

@@ -1,0 +1,23 @@
+{
+    "editor": {
+        "editor.background": "#232323",
+        "editor.foreground": "#ebdbb280",
+        "editor.lineHighlightBackground": "#3c38367f",
+        "editor.selectionBackground": "#3c3836",
+        "editorIndentGuide.background": "#ebdbb226",
+        "editor.findMatchBackground": "#d79921"
+    },
+    "rules": [
+        {
+            "foreground": "#928374",
+            "fontStyle": "italic",
+            "token": "comment.lua"
+        },
+        {
+            "foreground": "#83a598",
+            "fontStyle": "italic",
+            "token": "identifier.lua"
+        }
+        
+    ]
+}

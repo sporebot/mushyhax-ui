@@ -37,6 +37,38 @@ html, body {
   height: 100%;
 }
 
+.explorer {
+  box-shadow: inset 0px 0px 0px 1px #0000002f;
+  background-color: #0000002f;
+  z-index: 2;
+  position: absolute;
+  width: 300px;
+  height: calc(100% - 220px);
+  overflow: scroll;
+  left: 60px;
+  padding: 20px;
+  box-sizing: border-box
+}
+
+.explorer-icon {
+  margin-right: 5px;
+  filter: invert(60%) sepia(0%) saturate(1148%) hue-rotate(156deg) brightness(88%) contrast(81%);
+}
+
+.explorer-entry {
+  display: flex;
+  color: #a7a7a7;
+}
+
+.explorer-script {
+  color: #647aaa;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
 .output {
   margin-top: auto;
   width: 100%;
