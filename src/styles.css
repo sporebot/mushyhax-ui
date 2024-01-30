@@ -55,13 +55,25 @@ html, body {
   filter: invert(60%) sepia(0%) saturate(1148%) hue-rotate(156deg) brightness(88%) contrast(81%);
 }
 
+.explorer-icon-arrow {
+  opacity: 50%;
+  margin-right: 5px;
+  filter: invert(60%) sepia(0%) saturate(1148%) hue-rotate(156deg) brightness(88%) contrast(81%);
+}
+
+
+.explorer-icon-script {
+  margin-right: 5px;
+  filter: invert(70%) sepia(0%) saturate(1148%) hue-rotate(156deg) brightness(88%) contrast(81%);
+}
+
 .explorer-entry {
   display: flex;
-  color: #a7a7a7;
+  color: #858585;
 }
 
 .explorer-script {
-  color: #647aaa;
+  color: #929292;
 }
 
 .break {
