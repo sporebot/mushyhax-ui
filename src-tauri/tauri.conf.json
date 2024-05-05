@@ -20,7 +20,7 @@
       "http": {
         "all": true,
         "request": true,
-        "scope": ["http://0.0.0.0:58280/*"]
+        "scope": ["http://0.0.0.0:58280/*", "http://127.0.0.1:58280/*"]
       }
     },
     "bundle": {
