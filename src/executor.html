@@ -227,7 +227,7 @@
                     exploreButton.onclick()
 
                     runButton.onclick = () => {
-                        fetch("http://0:58280/add-to-queue", {
+                        fetch("http://127.0.0.1:58280/add-to-queue", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"
@@ -239,7 +239,7 @@
                     const recursive = () => {
                         setTimeout(async () => {
                             try{
-                                const data = await fetch("http://0:58280/read-message-queue")
+                                const data = await fetch("http://127.0.0.1:58280/read-message-queue")
 
                                 data.data.forEach(item => {
                                     print(item[0], item[1])
